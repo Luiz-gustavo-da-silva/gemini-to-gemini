@@ -1,6 +1,6 @@
 # GeminiToGemini
 
-Criação de uma aplicação WEB de chat que usa a api do Gemini para falar com ele mesma.
+Criação de uma aplicação WEB de chat que usa a api do Gemini para falar com ela mesma.
 
 # Ferramentas
 
