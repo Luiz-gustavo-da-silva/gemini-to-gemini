@@ -1,0 +1,50 @@
+<div class="min-h-screen bg-[#212121] text-white flex flex-col justify-between">
+  <div class="flex flex-col items-center p-4">
+    <div class="w-full max-w-screen-xl p-0 sm:p-6 rounded-lg">
+      <div class="mb-4 overflow-y-auto max-h-100">
+        <div
+          *ngFor="let content of generatedContent"
+          class="mb-2 flex flex-row gap-3"
+          [ngClass]="{ 'flex-row-reverse align-bottom': content.left }"
+        >
+          <div>
+            <p
+              class="mb-2 text-white rounded-full w-[40px] h-[40px] flex items-center justify-center overflow-hidden text-center"
+              [ngStyle]="{ 'background-color': content.cor }"
+            >
+              {{ content.ia }}
+            </p>
+          </div>
+          <div>
+            <p class="mb-2 text-white bg-[rgba(50,50,50,.85)] p-3 rounded-lg"
+            [ngClass]="{ 'ml-14': content.left, 'mr-14': !content.left }"
+            >
+              {{ content.text }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full p-4">
+    <div
+      class="fixed bottom-0 left-0 w-full bg-[#212121] p-4 flex justify-center"
+    >
+      <button
+        *ngIf="!conversationActive"
+        class="bg-blue-600 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-700 transition duration-200"
+        (click)="startConversation()"
+      >
+        Iniciar conversa
+      </button>
+      <button
+        *ngIf="conversationActive"
+        class="bg-red-600 text-white py-2 px-6 rounded-lg shadow-md hover:bg-red-700 transition duration-200"
+        (click)="stopConversation()"
+      >
+        Parar conversa
+      </button>
+    </div>
+  </div>
+</div>
